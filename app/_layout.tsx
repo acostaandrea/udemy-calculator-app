@@ -4,6 +4,7 @@ import { Slot } from 'expo-router'
 import { useFonts } from 'expo-font';
 import { Colors } from '@/constants/Colors';
 import { StatusBar } from 'expo-status-bar';
+import { globalStyles } from '@/styles/global-styles.styles';
 
 
 const RootLayout = () => {
@@ -15,7 +16,7 @@ const RootLayout = () => {
     return null;
   }
   return (
-    <View style={{backgroundColor: Colors.background, flex:1}}>
+    <View style={globalStyles.background}>
       <Text>_hhlayout</Text>
       <Slot/>
       <StatusBar style='auto'/>
