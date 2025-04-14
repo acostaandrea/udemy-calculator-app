@@ -4,7 +4,8 @@ import React from 'react'
 const CalculatorApp = () => {
   return (
     <View>
-      <Text>Calculator App</Text>
+      <Text
+      style={{fontSize:50, fontFamily:'SpaceMono', color: 'white'}}>Calculator App</Text>
     </View>
   )
 }
