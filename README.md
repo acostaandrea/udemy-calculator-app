@@ -1,50 +1,66 @@
 # Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is an [Expo](https://expo.dev) project created with 
+```bash
+npx create-expo-app@latest
+```
 
 ## Get started
 
 1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 2. Start the app
 
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
 ```bash
-npm run reset-project
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+   This will start the Expo CLI and open a new tab in your default web browser. You can then run the app on an Android (AndroidStudio) or iOS simulator (XCode), or on a physical device using the Expo Go app.
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+----------
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Create Prebuilds
+To create a prebuild, run the following command in your project directory:
 
-## Join the community
+```bash
+npx expo prebuild
+```
 
-Join our community of developers creating universal apps.
+This will generate the native iOS and Android directories in your project, allowing you to customize the native code if needed.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## To create new prebuilds, run the following command:
+
+```bash
+npx expo prebuild --clean
+```
+
+## Run the app on iOS and Android
+If you make a prebuild, to run the app on iOS and Android, use the following commands:
+
+```bash
+npx expo run:ios
+npx expo run:android
+```
+
+This will build the app for iOS and Android, respectively, and run it on the simulator or connected device. This also will create the app bundle for iOS and Android, it will be created in the `ios/build` and `android/app/build/outputs/apk/debug` directories, respectively.
+
+## Create release builds
+To create a release build for iOS and Android, run the following commands:
+
+```bash
+npx expo run:ios --configuration Release
+npx expo run:android --variant release
+```
+
+or you can use gradle to create a release build for Android:
+
+```bash
+cd android
+./gradlew assembleRelease
+```
+This will create a release build of the app for iOS and Android, respectively.
