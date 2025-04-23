@@ -47,7 +47,7 @@ npx expo run:ios
 npx expo run:android
 ```
 
-This will build the app for iOS and Android, respectively, and run it on the simulator or connected device. This also will create the app bundle for iOS and Android, it will be created in the `ios/build` and `android/app/build/outputs/apk/debug` directories, respectively.
+This will build the app for iOS and Android, respectively, and run it on the simulator or connected device. 
 
 ## Create release builds
 To create a release build for iOS and Android, run the following commands:
@@ -63,4 +63,4 @@ or you can use gradle to create a release build for Android:
 cd android
 ./gradlew assembleRelease
 ```
-This will create a release build of the app for iOS and Android, respectively.
+
